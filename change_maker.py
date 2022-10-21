@@ -16,7 +16,7 @@ print('Stock contains:\n'
       f'\t{five} fives\n' #5 dollars = 500 cents
       )
 
-valid = input("Enter the purchase price (xx.xx) or 'q' to quit: ")
+valid = input("Enter the purchase price (xx.xx) or `q' to quit: ")
 
 while valid!='q':
       valid=float(valid)
@@ -117,12 +117,12 @@ while valid!='q':
                   )
 
       else:
-            print('Illegal price: Must be a non-negative multiple of 5 cents.')
+            print('\nIllegal price: Must be a non-negative multiple of 5 cents.')
       valid = input("\nEnter the purchase price (xx.xx) or 'q' to quit: ")
 
 else:
       total = nickel*0.05 + dime*0.1 + quarter*0.25 + one*1 + five*5
-      print(f"Total: {(total)//1:.0f} dollars and {((total)-(total)//1)*100:.0f} cents")
+      print(f"\nTotal: {(total)//1:.0f} dollars and {((total)-(total)//1)*100:.0f} cents")
 
 
 
