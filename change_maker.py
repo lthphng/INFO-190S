@@ -29,7 +29,7 @@ while valid!='q':
                   "\t'f' - deposit a five dollars bill\n"
                   "\t'c' - cancel the purchase\n"
                   )
-
+            select = input()
             while valid>1:
                   print(f"Payment due: {(valid)//1:.0f} dollars and {((valid)-(valid)//1)*100:.0f} cents")
                   select = input("Indicate your deposit: ")
@@ -108,17 +108,17 @@ while valid!='q':
                               print(f"\t{valid//0.05:.0f} nickels")
                               nickel -= valid // 0.05
 
-            print('\nStock contains:\n'
-                  f'\t{nickel:.0f} nickels\n'  # 5 cents
-                  f'\t{dime:.0f} dimes\n'  # 10 cents
-                  f'\t{quarter:.0f} quarters\n'  # 25 cents
-                  f'\t{one:.0f} ones\n'  # 1 dollar = 100 cents
-                  f'\t{five:.0f} fives'  # 5 dollars = 500 cents
+            print('Stock contains:\n'
+                  f'\t{nickel} nickels\n'  # 5 cents
+                  f'\t{dime} dimes\n'  # 10 cents
+                  f'\t{quarter} quarters\n'  # 25 cents
+                  f'\t{one} ones\n'  # 1 dollar = 100 cents
+                  f'\t{five} fives\n'  # 5 dollars = 500 cents
                   )
 
       else:
             print('\nIllegal price: Must be a non-negative multiple of 5 cents.')
-      valid = input("\nEnter the purchase price (xx.xx) or 'q' to quit: ")
+valid = input("\nEnter the purchase price (xx.xx) or 'q' to quit: ")
 
 else:
       total = nickel*0.05 + dime*0.1 + quarter*0.25 + one*1 + five*5
