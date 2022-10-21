@@ -8,7 +8,7 @@ illegal = 0
 
 print('Welcome to the vending machine change maker program\n'
       'Change maker initialized.')
-print('\nStock contains:\n'
+print('Stock contains:\n'
       f'\t{nickel} nickels\n' #5 cents
       f'\t{dime} dimes\n' #10 cents
       f'\t{quarter} quarters\n' #25 cents
