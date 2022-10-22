@@ -8,15 +8,15 @@ illegal = 0
 
 print('Welcome to the vending machine change maker program\n'
       'Change maker initialized.')
-print('Stock contains:\n'
-      f'\t{nickel} nickels\n' #5 cents
-      f'\t{dime} dimes\n' #10 cents
-      f'\t{quarter} quarters\n' #25 cents
-      f'\t{one} ones\n' #1 dollar = 100 cents
-      f'\t{five} fives\n' #5 dollars = 500 cents
-      )
+print('Stock contains:')
+print(f'{nickel} nickels') #5 cents
+print(f'{dime} dimes') #10 cents
+print(f'{quarter} quarters') #25 cents
+print(f'{one} ones') #1 dollar = 100 cents
+print(f'{five} fives') #5 dollars = 500 cents
 
-valid = input("Enter the purchase price (xx.xx) or `q' to quit: ")
+
+valid = input("\nEnter the purchase price (xx.xx) or `q' to quit: \n")
 
 while valid!='q':
       valid=float(valid)
@@ -33,7 +33,7 @@ while valid!='q':
 
             while valid>1:
                   print(f"Payment due: {(valid)//1:.0f} dollars and {((valid)-(valid)//1)*100:.0f} cents")
-                  select = input("Indicate your deposit: ")
+                  select = input("Indicate your deposit: \n")
 
                   if select != 'n' and select != 'd' and select != 'q' and select != 'o' and select != 'f' and select != 'c':
                         illegal+=1
@@ -121,6 +121,6 @@ while valid!='q':
             print('\nIllegal price: Must be a non-negative multiple of 5 cents.')
       valid = input("\nEnter the purchase price (xx.xx) or 'q' to quit: ")
 
-else:
+if valid=='q':
       total = nickel*0.05 + dime*0.1 + quarter*0.25 + one*1 + five*5
       print(f"\nTotal: {(total)//1:.0f} dollars and {((total)-(total)//1)*100:.0f} cents")
