@@ -9,11 +9,11 @@ illegal = 0
 print('Welcome to the vending machine change maker program\n'
       'Change maker initialized.')
 print('Stock contains:')
-print(f'{nickel} nickels') #5 cents
-print(f'{dime} dimes') #10 cents
-print(f'{quarter} quarters') #25 cents
-print(f'{one} ones') #1 dollar = 100 cents
-print(f'{five} fives') #5 dollars = 500 cents
+print(f'   {nickel} nickels') #5 cents
+print(f'   {dime} dimes') #10 cents
+print(f'   {quarter} quarters') #25 cents
+print(f'   {one} ones') #1 dollar = 100 cents
+print(f'   {five} fives') #5 dollars = 500 cents
 
 
 valid = input("\nEnter the purchase price (xx.xx) or `q' to quit: \n")
