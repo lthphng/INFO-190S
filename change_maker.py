@@ -23,12 +23,12 @@ while valid!='q':
 
       if valid*100%5==0:
             print('\nMenu for deposits:\n'
-                  "   'n' - deposit a nickel\n"
-                  "   'd' - deposit a dime\n"
-                  "   'q' - deposit a quarter\n"
-                  "   'o' - deposit a one dollar bill\n"
-                  "   'f' - deposit a five dollars bill\n"
-                  "   'c' - cancel the purchase\n"
+                  "  'n' - deposit a nickel\n"
+                  "  'd' - deposit a dime\n"
+                  "  'q' - deposit a quarter\n"
+                  "  'o' - deposit a one dollar bill\n"
+                  "  'f' - deposit a five dollars bill\n"
+                  "  'c' - cancel the purchase\n"
                   )
 
             while valid>1:
@@ -110,11 +110,11 @@ while valid!='q':
                               nickel -= valid // 0.05
 
             print('\nStock contains:\n'
-                  f'   {nickel:.0f} nickels\n'  # 5 cents
-                  f'   {dime:.0f} dimes\n'  # 10 cents
-                  f'   {quarter:.0f} quarters\n'  # 25 cents
-                  f'   {one:.0f} ones\n'  # 1 dollar = 100 cents
-                  f'   {five:.0f} fives'  # 5 dollars = 500 cents
+                  f'  {nickel:.0f} nickels\n'  # 5 cents
+                  f'  {dime:.0f} dimes\n'  # 10 cents
+                  f'  {quarter:.0f} quarters\n'  # 25 cents
+                  f'  {one:.0f} ones\n'  # 1 dollar = 100 cents
+                  f'  {five:.0f} fives'  # 5 dollars = 500 cents
                   )
 
       else:
