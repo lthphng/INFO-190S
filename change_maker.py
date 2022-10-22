@@ -1,6 +1,6 @@
-nickel = 0
+nickel = 25
 dime = 25
-quarter = 0
+quarter = 25
 one = 0
 five = 0
 epsilon = 0.0196/100
