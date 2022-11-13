@@ -30,6 +30,7 @@ else:
             if option[i] not in num or option[i] == "-" or count > 1:
                 print('Invalid purchase price. Try again')
             i += 1
+            break
 
         if i == len(option):
             if option[0] not in number or option == '.':
@@ -40,6 +41,7 @@ else:
                     if option[b] not in number:
                         print('Invalid purchase price. Try again')
                     i += 1
+                    break
                 print("Illegal price: Must be a non-negative multiple of 5 cents.")
 
             else:
