@@ -3,6 +3,10 @@ def read_dna(dna_filename):
     b=a.read()
     return b
 
+def dna_length(dna_filename):
+    a=len(read_dna(dna_filename))
+    return a
+
 def get_strs(str_profile):
     b=['0','1','2','3','4','5','6','7','8','9']
     c=[]
