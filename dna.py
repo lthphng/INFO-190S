@@ -49,7 +49,7 @@ def longest_str_repeat_count(str_frag, dna_seq):
             break
         if dna_seq[i:i+4]==str_frag:
             count+=1
-            i+=3
+            i+=4
         else:
             list_count.append(count)
             i+=1
