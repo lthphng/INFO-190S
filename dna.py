@@ -44,21 +44,16 @@ def longest_str_repeat_count(str_frag, dna_seq):
     list_count=[]
     count = 0
     i=0
+    mx = 0
     while i<len(dna_seq):
-        if i==len(dna_seq)-4:
-            break
         if dna_seq[i:i+4]==str_frag:
             count+=1
             i+=4
+            if mx < count:
+                mx = count
         else:
-            list_count.append(count)
-            count=0
+            count = 0
             i+=1
-    
-    mx = 0
-    for a in list_count:
-        if mx<a:
-            mx = a
     return mx
 
 def find_match(str_profile, dna_seq):
