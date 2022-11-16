@@ -45,6 +45,8 @@ def longest_str_repeat_count(str_frag, dna_seq):
     count = 0
     i=0
     while i<len(dna_seq):
+        if i==len(dna_seq)-4:
+            break
         if dna_seq[i:i+4]==str_frag:
             count+=1
             i+=4
