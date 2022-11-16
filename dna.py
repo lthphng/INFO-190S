@@ -1,8 +1,11 @@
-import sys
 def read_dna(dna_filename):
     a=open(dna_filename)
     b=a.read()
     return b
+
+def dna_length(dna_filename):
+    a=len(read_dna(dna_filename))
+    return a
 
 def get_strs(str_profile):
     b=['0','1','2','3','4','5','6','7','8','9']
@@ -38,14 +41,20 @@ def read_strs(str_filename):
     return h
 
 def longest_str_repeat_count(str_frag, dna_seq):
-    a=True
-    count=0
-    while a:
-        for i in range(len(dna_seq)):
-            if dna_seq[i:i+4]==str_frag:
-                count+=1
-        a=False
-    return count
+    list_count=[]
+    count = 0
+    i=0
+    mx = 0
+    while i<len(dna_seq):
+        if dna_seq[i:i+4]==str_frag:
+            count+=1
+            i+=4
+            if mx < count:
+                mx = count
+        else:
+            count = 0
+            i+=1
+    return mx
 
 def find_match(str_profile, dna_seq):
     a=str_profile[0]
@@ -78,8 +87,7 @@ def dna_match(str_filename, dna_filename):
     return ans
 
 if __name__ == '__main__':
-    if (len(sys.argv[1]) == 0 or len(sys.argv[2]==0)):
+    if (len(sys.argv[1]) == 0 or len(sys.argv[2])==0):
         print('Usage: python dna.py STR_FILE DNA_FILE')
     else:
         print(dna_match(sys.argv[1],sys.argv[2]))
-
