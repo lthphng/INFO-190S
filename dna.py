@@ -80,7 +80,7 @@ def dna_match(str_filename, dna_filename):
     return 'No match'
 
 if __name__ == '__main__':
-    if (len(sys.argv[1]) == 0 or len(sys.argv[2])==0):
+    if len(sys.argv)!=3:
         print('Usage: python dna.py STR_FILE DNA_FILE')
     else:
         print(dna_match(sys.argv[1],sys.argv[2]))
