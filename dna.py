@@ -1,3 +1,5 @@
+import sys
+
 def read_dna(dna_filename):
     a=open(dna_filename)
     b=a.read()
