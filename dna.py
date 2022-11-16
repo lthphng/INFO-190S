@@ -54,10 +54,6 @@ def longest_str_repeat_count(str_frag, dna_seq):
             list_count.append(count)
             count=0
             i+=1
-    for a in range(len(list_count)):
-        if list_count[a]==list_count[a+1] and list_count[a]!=0:
-            count=list_count[a]
-            break
     
     mx = 0
     for a in list_count:
