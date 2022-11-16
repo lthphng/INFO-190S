@@ -72,19 +72,12 @@ def find_match(str_profile, dna_seq):
 def dna_match(str_filename, dna_filename):
     dna=read_dna(dna_filename)
     stats=read_strs(str_filename)
-    alice=get_strs(stats[0])
-    bob=get_strs(stats[1])
-    charlie=get_strs(stats[2])
-    ans=''
-    if find_match(alice, dna):
-        ans="Alice"
-    elif find_match(bob,dna):
-        ans="Bob"
-    elif find_match(charlie,dna):
-        ans="Charlie"
-    else:
-        ans="No match"
-    return ans
+
+    for profile in stats:
+        strs = get_strs(profile)
+        if(find_match(strs, dna)):
+            return profile['name']
+    return 'No match'
 
 if __name__ == '__main__':
     if (len(sys.argv[1]) == 0 or len(sys.argv[2])==0):
