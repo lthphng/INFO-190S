@@ -57,7 +57,12 @@ def longest_str_repeat_count(str_frag, dna_seq):
         if list_count[a]==list_count[a+1] and list_count[a]!=0:
             count=list_count[a]
             break
-    return count
+    
+    mx = 0
+    for a in list_count:
+        if mx<a:
+            mx = a
+    return mx
 
 def find_match(str_profile, dna_seq):
     a=str_profile[0]
