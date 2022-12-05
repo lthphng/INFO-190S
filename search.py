@@ -18,9 +18,13 @@ def text_to_article_list(text):
 
 def split_words(text):
     each = text.splitlines()
-    if each[0]=="":
-        each.pop(0)
-    return each
+    for i in range(len(each)):
+        if each[i]=="":
+            each.pop(i)
+    if each=="":
+        return ""
+    else:
+        return each
 
 def scrub_word(text):
     return text.strip(string.punctuation)
