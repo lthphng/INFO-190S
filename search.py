@@ -1,7 +1,6 @@
 # Author: Phuong Le
 # Email: ptle@umass.edu
 # Spire ID: 33596966
-
 import string
 import urllib.request
 import re
@@ -14,13 +13,13 @@ def read_article_file(url):
 
 def text_to_article_list(text):
     article_list = re.split('<NEW ARTICLE>', text)
-    if each[0]=="":
-        each.pop(0)
+    article_list.pop(0)
     return article_list
 
 def split_words(text):
     each = text.splitlines()
-    each.pop(0)
+    if each[0]=="":
+        each.pop(0)
     return each
 
 def scrub_word(text):
