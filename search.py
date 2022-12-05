@@ -1,3 +1,7 @@
+# Author: Phuong Le
+# Email: ptle@umass.edu
+# Spire ID: 33596966
+
 import string
 import urllib.request
 import re
