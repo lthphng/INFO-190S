@@ -27,3 +27,13 @@ def split_words(text):
 
 def scrub_word(text):
     return text.strip(string.punctuation)
+
+def scrub_words(words):
+    a=[]
+    if words=="":
+        return
+    else:
+        b=words.lower()
+        c=b.strip()
+        d=scrub_word(c)
+        return d
