@@ -29,11 +29,13 @@ def scrub_word(text):
     return text.strip(string.punctuation)
 
 def scrub_words(words):
-    a=[]
-    if words=="":
-        return
-    else:
-        b=words.lower()
-        c=b.strip()
-        d=scrub_word(c)
-        return d
+    a = []
+    for i in words:
+        b = i.lower()
+        c = b.strip()
+        d = scrub_word(c)
+        if d=="":
+            continue
+        else:
+            a.append(d)
+    return a
