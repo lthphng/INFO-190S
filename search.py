@@ -18,16 +18,12 @@ def text_to_article_list(text):
 
 def split_words(text):
     each = text.splitlines()
-    x=len(each)
-    for i in range(x):
-        a=each[i].split()
-        each+=a
-        each.pop(i)
-    for j in each:
-        if j=="":
-            each.remove(j)
-    each.reverse()
-    return each
+    a=[]
+    for i in each:
+        b=i.split()
+        for j in b:
+            a.append(j)
+    return a
 
 def scrub_word(text):
     return text.strip(string.punctuation)
