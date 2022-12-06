@@ -23,6 +23,9 @@ def split_words(text):
         a=each[i].split()
         each+=a
         each.pop(i)
+    for j in each:
+        if j=="":
+            each.remove(j)
     each.reverse()
     return each
 
