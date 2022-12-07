@@ -42,21 +42,22 @@ def scrub_words(words):
 
 def build_article_index(article_list):
     not_sort={}
-    word_list=[]
     for (index, article) in enumerate(article_list):
         a=split_words(article)
         b=scrub_words(a)
-        #for i in b:
-        #    if i not in word_list:
-        #        word_list.append(i)
-        #word_list.sort()
         for j in b:
             if j not in not_sort:
                 not_sort[j]=set()
             not_sort[j].add(index)
-            #elif j in not_sort and j in article:
-            #    not_sort[j].add(index+1)
-            #else:
-            #    continue
-    #article_index=dict(sorted(not_sort.items()))
     return not_sort
+
+def find_words(keywords, index):
+    intersect_docs = set()
+    a=[]
+    for i in keywords:
+        for j in index[i]:
+            if j not in a:
+                a.append(j)
+            else:
+                intersect_docs.add(j)
+    return intersect_docs
