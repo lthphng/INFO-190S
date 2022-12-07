@@ -46,16 +46,17 @@ def build_article_index(article_list):
     for (index, article) in enumerate(article_list):
         a=split_words(article)
         b=scrub_words(a)
-        for i in b:
-            if i not in word_list:
-                word_list.append(i)
-        word_list.sort()
-        for j in word_list:
+        #for i in b:
+        #    if i not in word_list:
+        #        word_list.append(i)
+        #word_list.sort()
+        for j in b:
             if j not in not_sort:
-                not_sort[j]={index+1}
-            elif j in not_sort and j in article:
-                not_sort[j].add(index+1)
-            else:
-                continue
-    article_index=dict(sorted(not_sort.items()))
-    return article_index
+                not_sort[j]=set()
+            not_sort[j].add(index)
+            #elif j in not_sort and j in article:
+            #    not_sort[j].add(index+1)
+            #else:
+            #    continue
+    #article_index=dict(sorted(not_sort.items()))
+    return not_sort
