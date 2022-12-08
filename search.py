@@ -53,7 +53,12 @@ def build_article_index(article_list):
 
 def find_words(keywords, index):
     intersect_docs = set()
+    a=0
     lower_keywords=[words.lower() for words in keywords]
-    for i in range(len(lower_keywords)):
-        intersect_docs.update(index[lower_keywords[i]].intersection(index[lower_keywords[i+1]]))
-        return intersect_docs
+    intersect_words=index[lower_keywords[a]]
+    for i in lower_keywords[a+1:]:
+        intersect_docs.update(intersect_words.intersection(index[i]))
+    a+=1
+    lower_keywords.pop(a)
+    if a==len(lower_keywords)-1:
+        return find_words(lower_keywords, index)
