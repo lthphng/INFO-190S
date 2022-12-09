@@ -55,8 +55,10 @@ def find_words(keywords, index):
     intersect_docs = set()
     a=0
     lower_keywords=[words.lower() for words in keywords]
+    intersect_docs = index[lower_keywords[a]]
     for i in lower_keywords[a + 1:]:
-        intersect_words=index[lower_keywords[a]]
-        intersect_docs.update(intersect_words.intersection(index[i]))
-    if a==len(lower_keywords)-2:
-        return intersect_docs
+        intersect_docs=intersect_docs.intersection(index[i])
+        a+=1
+        if a==len(lower_keywords)-1:
+            break
+    return intersect_docs
