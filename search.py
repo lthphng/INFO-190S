@@ -55,12 +55,16 @@ def find_words(keywords, index):
     intersect_docs = set()
     a=0
     lower_keywords=[words.lower() for words in keywords]
-    intersect_docs = index[lower_keywords[a]]
-    for i in lower_keywords[a + 1:]:
-        if i not in index:
-            break
-        intersect_docs=intersect_docs.intersection(index[i])
-        a+=1
-        if a==len(lower_keywords)-1:
-            break
-    return intersect_docs
+    if lower_keywords[a] not in index:
+        return intersect_docs
+    else:
+        intersect_docs = index[lower_keywords[a]]
+        for i in lower_keywords[a + 1:]:
+            if i not in index.keys():
+                intersect_docs = set()
+            else:
+                intersect_docs=intersect_docs.intersection(index[i])
+            a+=1
+            if a==len(lower_keywords)-1:
+                break
+        return intersect_docs
