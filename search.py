@@ -75,11 +75,10 @@ if __name__ == '__main__':
     text = read_article_file(sys.argv[1])
     articles = text_to_article_list(text)
     index = build_article_index(articles)
-    scrub = scrub_word(articles)
     if sys.argv[2]=='find':
         words_to_find=sys.argv[3].split()
         a=find_words(words_to_find, index)
         for i in a:
             print(i, end=" ")
     elif sys.argv[2]=='print':
-        print(scrub[int(sys.argv[3])-1])
+        print(scrub[articles[int(sys.argv[3])-1]])
