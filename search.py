@@ -1,6 +1,8 @@
 # Author: Phuong Le
 # Email: ptle@umass.edu
 # Spire ID: 33596966
+
+import sys
 import string
 import urllib.request
 import re
@@ -68,3 +70,14 @@ def find_words(keywords, index):
             if a==len(lower_keywords)-1:
                 break
         return intersect_docs
+    
+if __name__ == '__main__':
+    text = read_article_file(sys.argv[1])
+    articles = text_to_article_list(text)
+    index = build_article_index(articles)
+    scrub = scrub_words(articles)
+    if sys.argv[2]=='find':
+        words_to_find=list(sys.argv[3])
+        print(find_words(words_to_find, index))
+    elif sys.argv[2]=='print':
+        print(scrub[sys.argv[3]])
