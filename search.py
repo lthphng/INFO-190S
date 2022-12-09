@@ -81,4 +81,4 @@ if __name__ == '__main__':
         for i in a:
             print(i, end=" ")
     elif sys.argv[2]=='print':
-        print(scrub_word(articles[int(sys.argv[3])-1]))
+        print(articles[int(sys.argv[3])-1])
