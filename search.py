@@ -82,4 +82,4 @@ if __name__ == '__main__':
         for i in a:
             print(i, end=" ")
     elif sys.argv[2]=='print':
-        print(scrub[sys.argv[3]])
+        print(scrub[int(sys.argv[3])])
