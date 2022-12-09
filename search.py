@@ -77,7 +77,7 @@ if __name__ == '__main__':
     index = build_article_index(articles)
     scrub = scrub_words(articles)
     if sys.argv[2]=='find':
-        words_to_find=list(sys.argv[3])
+        words_to_find=sys.argv[3].split()
         print(find_words(words_to_find, index))
     elif sys.argv[2]=='print':
         print(scrub[sys.argv[3]])
